@@ -54,6 +54,39 @@ If Docker is not supported or you prefer to run the project locally, follow thes
      ```
    (You will see `(venv)` in the terminal, indicating the environment is active).
 
+Here’s the improved and well-structured version in English:
+
+---
+
+### 3.1. **Possible Solutions**  
+
+If you encounter issues with the virtual environment (`venv`), follow these steps:
+
+1. **Try updating `pip` first:**  
+
+   Run the following commands to ensure `pip` is up to date:  
+
+   ```bash
+   python -m ensurepip --upgrade
+   python -m pip install --upgrade pip
+   ```
+
+2. **If this has no effect**, follow these steps to reset the virtual environment:  
+
+   - **Delete the `venv` folder** manually:  
+
+     Navigate to your project directory and remove the `venv` folder.  
+
+   - **Recreate the virtual environment:**  
+
+     After deleting the folder, create a new virtual environment by running:  
+
+     ```bash
+     python -m venv venv
+     ```
+
+---
+
 4. **Install Dependencies**:
    ```bash
    pip install -r requirements.txt
@@ -89,90 +122,9 @@ If Docker is not supported or you prefer to run the project locally, follow thes
      ```
 
 ---
-Docker Installation Notice:
-
-Unfortunately, the Docker installation is not working correctly at the moment because the development machine is not supporting the installation properly. As a result, running the project via Docker is currently unavailable. However, the project can be run without issues using a virtual environment (venv), and instructions for this setup are provided in the "How to Run the Project Locally (Without Docker)" section.
-
-We are working to resolve the issue and provide a solution that will allow the project to run via Docker soon. Thank you for your understanding!
-### 2. How to Run the Project with Docker
-
-If your machine supports Docker, follow these steps to run the project in a Docker container.
-
-#### Prerequisites:
-- Docker and Docker Compose installed on your machine.
-- Git (optional, for cloning the repository).
-
-#### Step-by-Step Guide:
-
-1. **Clone the Repository** (if you haven't already):
-   ```bash
-   git clone https://github.com/Hansdonnersa/Restf.Py.git  
-   cd Restf.Py
-   ```
-
-2. **Start the Containers**:
-   - Run the following command to build the Docker image and start the container:
-     ```bash
-     docker-compose up --build
-     ```
-
-3. **Access the API**:
-   - Once the container is running, access the API at:
-     - `http://localhost:8000/api/`
-
-4. **Test the Endpoints**:
-   - Use **Swagger UI** for interactive testing:
-     - `http://localhost:8000/swagger/`
-   - Alternatively, use tools like **curl** or **Postman**.
-
-5. **Stop the Containers** (when finished):
-   - Press `Ctrl + C` in the terminal where `docker-compose up` is running, then execute:
-     ```bash
-     docker-compose down
-     ```
-
----
-
-## Example Requests and Responses
-
-### **Sum**
-
-- **Request**:
-  ```json
-  {
-    "numbers": [1, 2, 3, 4, 5]
-  }
-  ```
-
-- **Response**:
-  ```json
-  {
-    "sum": 15
-  }
-  ```
-
-### **Average**
-
-- **Request**:
-  ```json
-  {
-    "numbers": [10, 20, 30, 40, 50]
-  }
-  ```
-
-- **Response**:
-  ```json
-  {
-    "average": 30.0
-  }
-  ```
-
----
 
 ## Project Structure
 
-- **Dockerfile**: Defines the Docker image for the application.
-- **docker-compose.yml**: Configures services (application and database, if needed).
 - **requirements.txt**: Lists project dependencies.
 - **README.md**: Project documentation (this file).
 - **api/**: Contains API endpoints.
