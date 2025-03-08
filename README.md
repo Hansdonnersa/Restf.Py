@@ -82,15 +82,23 @@ If you encounter issues with the virtual environment (`venv`), follow these step
      After deleting the folder, create a new virtual environment by running:  
 
      ```bash
-     python -m venv venv
-     ```
+3.9
+     python.exe -m pip install --upgrade pip
+     pip install drf-yasg
+     ou 
+     drf-yasg==1.24.0
+     ou 
+     pip install drf-yasg==1.21.9
 
----
+
+     ```
+     ```
 
 4. **Install Dependencies**:
    ```bash
    pip install -r requirements.txt
    ```
+   if error gos to -3.9
 
 5. **Run Database Migrations**:
    ```bash
